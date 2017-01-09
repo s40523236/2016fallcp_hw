@@ -879,7 +879,7 @@ w = 20
 h = 30
 # 將前面的水平線與垂直線繪圖改用 background 繪圖
 background(250, 250, w, h, 5, 3, ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>week 13</title><link href="./week-13.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-11:./week-13.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>week 13.5</title><link href="./week-135.html" rel="alternate"></link><published>2016-12-11T12:00:00+08:00</published><updated>2016-12-11T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-11:./week-135.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖&lt;/p&gt;
