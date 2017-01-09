@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/misc.atom.xml" rel="self"></link><id>./</id><updated>2016-11-21T12:00:00+08:00</updated><entry><title>w11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-21T12:00:00+08:00</published><updated>2016-11-21T12:00:00+08:00</updated><author><name>s40523236</name></author><id>tag:,2016-11-21:./w11.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/misc.atom.xml" rel="self"></link><id>./</id><updated>2016-12-19T14:35:00+08:00</updated><entry><title>W15 整理影片重點</title><link href="./w15-zheng-li-ying-pian-zhong-dian.html" rel="alternate"></link><published>2016-12-19T14:35:00+08:00</published><updated>2016-12-19T14:35:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-19:./w15-zheng-li-ying-pian-zhong-dian.html</id><summary type="html">&lt;h4&gt;W14影片重點&lt;/h4&gt;
+
+
+
+&lt;h1&gt;&lt;a href="https://vimeo.com/user24079973"style="color:red;"&gt;整理各週教學影片&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://vimeo.com/195916522"style="color:red;"&gt;cpa_W14-1&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;影片說明&lt;/h1&gt;
+&lt;p&gt;&lt;h4&gt;從 Leo Editor 的節點 @edit @path @button 的用法到 pelican 轉 .md 檔案成為 blog 網誌, 並加入 Brython 程式導入與執行的方法&lt;/h4&gt;&lt;/p&gt;
+&lt;OL TYPE=1&gt;
+&lt;h3&gt;
+&lt;LI&gt;@settings-&gt;設定節點
+
+&lt;LI&gt;@edit-&gt;增新節點  
+
+&lt;LI&gt;@path-&gt;儲存路徑
+
+&lt;LI&gt;@button-&gt;按鈕
+
+&lt;LI&gt;移動節點&lt;br/&gt;
+
+ctrl+u 向上移動&lt;br/&gt;
+
+ctrl+d 向下移動&lt;br/&gt;
+
+ctrl+r 向右移動&lt;br/&gt;
+
+ctrl+l 向左移動&lt;br/&gt;
+
+ctrl+i 新增內容&lt;br/&gt;
+
+ctrl+b 執行內容&lt;br/&gt;
+
+&lt;/h3&gt;
+&lt;img src="https://github.com/cow2166/9989/blob/master/%E6%93%B72%E5%8F%96.png?raw=true" alt="W15" title="W15" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;
+
+
+&lt;HR color="#FFFF77" size="1" &gt;
+
+&lt;h1&gt;影片&lt;/h1&gt;
+
+&lt;iframe src="https://player.vimeo.com/video/195916522" width="640" height="491" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/195916522"&gt;cpa_w14-1&lt;/a&gt; from &lt;a href="https://vimeo.com/user24079973"&gt;虎尾科大機械設計工程&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;h1&gt;重複播放www.ytrepeat.com/影片號碼&lt;/h1&gt;
+
+&lt;img src="https://github.com/cow2166/9989/blob/master/990%E6%93%B7%E5%8F%96.PNG?raw=true" alt="W15" title="www.ytrepeat.com/" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T12:00:00+08:00</published><updated>2016-12-12T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;            以下為第十四週開始的城市練習,要利用 &lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://mde.tw/2016fallcp/course/Python3Programs.txt&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; 要整理Brython 的用法.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;div id ="ex1"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+container = doc['ex1']
+
+container&lt;="W14練習"
+&lt;/script&gt;
+
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']
+mystring = input("要印出什麼字串?")
+mynum = input("要印幾次?")
+
+for i in range(int(mynum)):
+    #container&lt;="W14練習-2"+html.BR()
+    container&lt;=mystring+html.BR()
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>w11</title><link href="./w11.html" rel="alternate"></link><published>2016-11-21T12:00:00+08:00</published><updated>2016-11-21T12:00:00+08:00</updated><author><name>s40523236</name></author><id>tag:,2016-11-21:./w11.html</id><summary type="html">&lt;p&gt;Brython 繪圖&lt;/p&gt;
 
 
 &lt;p&gt;繪圖流程,導入資料庫,啟動,然後引用各種模組開始繪圖&lt;/p&gt;
