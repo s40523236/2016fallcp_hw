@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>2016fallcp_hw - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
+    <title>2016 fallcp 期末考週 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,18 +166,17 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./2016fallcp_hw.html">
+<link rel="canonical" href="./2016-fallcp-qi-mo-kao-zhou.html">
 
         <meta name="author" content="40523236" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="W17 週心得與程式範例: 1/2 W16 週心得與程式範例: 心得: 第一次學習如何做小遊戲 window.onload=function(){ brython(1); } from browser import alert import random ans = random.randint(1, 100) a_in = int(input(&#34;輸入整數:&#34;)) guess = 1 while ans != a_in: if ..." />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="2016fallcp_hw"/>
-        <meta property="og:url" content="./2016fallcp_hw.html"/>
-        <meta property="og:description" content="W17 週心得與程式範例: 1/2 W16 週心得與程式範例: 心得: 第一次學習如何做小遊戲 window.onload=function(){ brython(1); } from browser import alert import random ans = random.randint(1, 100) a_in = int(input(&#34;輸入整數:&#34;)) guess = 1 while ans != a_in: if ..."/>
-        <meta property="article:published_time" content="2017-01-09" />
+        <meta property="og:title" content="2016 fallcp 期末考週"/>
+        <meta property="og:url" content="./2016-fallcp-qi-mo-kao-zhou.html"/>
+        <meta property="og:description" content=""/>
+        <meta property="article:published_time" content="2016-12-26" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
             <meta property="article:author" content="40523236" />
@@ -290,10 +289,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./2016fallcp_hw.html"
+                    <a href="./2016-fallcp-qi-mo-kao-zhou.html"
                        rel="bookmark"
-                       title="Permalink to 2016fallcp_hw">
-                        2016fallcp_hw
+                       title="Permalink to 2016 fallcp 期末考週">
+                        2016 fallcp 期末考週
                     </a>
                 </h1>
             </header>
@@ -303,7 +302,7 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-01-09T13:00:00+08:00"> 週一 09 一月 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-26T12:00:00+08:00"> 週一 26 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
             <a href="./author/40523236.html"><i class="fa fa-user"></i> 40523236</a>
@@ -315,14 +314,14 @@ init_mathjax();
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>W17 週心得與程式範例:
-1/2 </p>
-<p>W16 週心得與程式範例:
-心得: 第一次學習如何做小遊戲 
+                <!-- PELICAN_END_SUMMARY -->
+
 <!-- 導入 Brython 標準程式庫 -->
+
 <script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
-</script></p>
+</script>
+
 <!-- 啟動 Brython -->
 
 <script>
@@ -331,55 +330,104 @@ brython(1);
 }
 </script>
 
+<p>W15 製作按鈕</p>
 <!-- 以下實際利用  Brython 畫圖 -->
 
 <script type="text/python3">
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+</script>
+
+<p><button id="ch01">取輸入後, 列印出來</button></p>
+
+<pre class="brush: python">
+
+<!-- 以下實際利用  Brython 畫圖 -->
+<script type="text/python3">
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+</script>
+
+<p><button id="ch01">取輸入後, 列印出來</button></p>
+
+</pre>
+
+<p>W16 猜數字遊戲</p>
+<!-- 以下實際利用  Brython 畫圖 -->
+
+<script type="text/python3">
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in < ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 </script>
 
-<p>W15 週心得與程式範例:</p>
-<h1><a href="https://vimeo.com/user24079973"style="color:red;">整理各週教學影片</a></h1>
-<h1><a href="https://vimeo.com/195916522"style="color:red;">cpa_W14-1</a></h1>
-<h1>影片說明</h1>
-<p><h4>從 Leo Editor 的節點 @edit @path @button 的用法到 pelican 轉 .md 檔案成為 blog 網誌, 並加入 Brython 程式導入與執行的方法</h4></p>
-<OL TYPE=1>
-<h3>
-<LI>@settings->設定節點
+<p><button id="ch02">猜數字</button></p>
 
-<LI>@edit->增新節點  
+<pre class="brush: python">
 
-<LI>@path->儲存路徑
+<!-- 以下實際利用  Brython 畫圖 -->
+<script type="text/python3">
+from browser import document
+from browser import alert
+import random
 
-<LI>@button->按鈕
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-<LI>移動節點<br/>
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-ctrl+u 向上移動<br/>
+    while ans != a_in:
+        if a_in < ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-ctrl+d 向下移動<br/>
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
 
-ctrl+r 向右移動<br/>
+document['ch02'].bind('click',two_input)
 
-ctrl+l 向左移動<br/>
+</script>
 
-ctrl+i 新增內容<br/>
+<p><button id="ch02">猜數字</button></p>
 
-ctrl+b 執行內容<br/>
+</pre>
+
+<p>w17 1/2放假</p>
+<p><a href="https://vimeo.com/199423621">影片</a></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -395,8 +443,8 @@ ctrl+b 執行內容<br/>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="./2016fallcp_hw.html">
-                            2016fallcp_hw
+                        <a href="./2016-fallcp-qi-mo-kao-zhou.html">
+                            2016 fallcp 期末考週
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -475,7 +523,7 @@ ctrl+b 執行內容<br/>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 KMOL
+         <div class="col-xs-10">&copy; 2016 KMOL
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

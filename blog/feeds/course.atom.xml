@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2017-01-09T13:00:00+08:00</updated><entry><title>2016fallcp_hw</title><link href="./2016fallcp_hw.html" rel="alternate"></link><published>2017-01-09T13:00:00+08:00</published><updated>2017-01-09T13:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2017-01-09:./2016fallcp_hw.html</id><summary type="html">&lt;p&gt;W17 週心得與程式範例:
-1/2 &lt;/p&gt;
-&lt;p&gt;W16 週心得與程式範例:
-心得: 第一次學習如何做小遊戲 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2016-12-26T12:00:00+08:00</updated><entry><title>2016 fallcp 期末考週</title><link href="./2016-fallcp-qi-mo-kao-zhou.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-26:./2016-fallcp-qi-mo-kao-zhou.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
+
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;&lt;/p&gt;
+&lt;/script&gt;
+
 &lt;!-- 啟動 Brython --&gt;
 
 &lt;script&gt;
@@ -15,55 +15,104 @@ brython(1);
 }
 &lt;/script&gt;
 
+&lt;p&gt;W15 製作按鈕&lt;/p&gt;
 &lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 
 &lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+
+def get_input(ev):
+    the_input = input("請輸入")
+    alert("輸入為:"+str(the_input))
+
+document['ch01'].bind('click',get_input)
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="ch01"&gt;取輸入後, 列印出來&lt;/button&gt;&lt;/p&gt;
+
+&lt;/pre&gt;
+
+&lt;p&gt;W16 猜數字遊戲&lt;/p&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
 from browser import alert
 import random
 
-ans = random.randint(1, 100)
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-a_in = int(input("輸入整數:"))
-guess = 1
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-while ans != a_in:
-    if a_in &lt; ans:
-        a_in = int(input("too small"))
-    else:
-        a_in = int(input("too big"))
-    guess += 1
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
+
+document['ch02'].bind('click',two_input)
+
 &lt;/script&gt;
 
-&lt;p&gt;W15 週心得與程式範例:&lt;/p&gt;
-&lt;h1&gt;&lt;a href="https://vimeo.com/user24079973"style="color:red;"&gt;整理各週教學影片&lt;/a&gt;&lt;/h1&gt;
-&lt;h1&gt;&lt;a href="https://vimeo.com/195916522"style="color:red;"&gt;cpa_W14-1&lt;/a&gt;&lt;/h1&gt;
-&lt;h1&gt;影片說明&lt;/h1&gt;
-&lt;p&gt;&lt;h4&gt;從 Leo Editor 的節點 @edit @path @button 的用法到 pelican 轉 .md 檔案成為 blog 網誌, 並加入 Brython 程式導入與執行的方法&lt;/h4&gt;&lt;/p&gt;
-&lt;OL TYPE=1&gt;
-&lt;h3&gt;
-&lt;LI&gt;@settings-&gt;設定節點
+&lt;p&gt;&lt;button id="ch02"&gt;猜數字&lt;/button&gt;&lt;/p&gt;
 
-&lt;LI&gt;@edit-&gt;增新節點  
+&lt;pre class="brush: python"&gt;
 
-&lt;LI&gt;@path-&gt;儲存路徑
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import alert
+import random
 
-&lt;LI&gt;@button-&gt;按鈕
+def two_input(ev):
+    ans = random.randint(1, 100)
 
-&lt;LI&gt;移動節點&lt;br/&gt;
+    a_in = int(input("輸入整數:"))
+    guess = 1
 
-ctrl+u 向上移動&lt;br/&gt;
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("too small"))
+        else:
+            a_in = int(input("too big"))
+        guess += 1
 
-ctrl+d 向下移動&lt;br/&gt;
+    alert("恭喜答對 ,一共猜了" + (str(guess)) + "次")
 
-ctrl+r 向右移動&lt;br/&gt;
+document['ch02'].bind('click',two_input)
 
-ctrl+l 向左移動&lt;br/&gt;
+&lt;/script&gt;
 
-ctrl+i 新增內容&lt;br/&gt;
+&lt;p&gt;&lt;button id="ch02"&gt;猜數字&lt;/button&gt;&lt;/p&gt;
 
-ctrl+b 執行內容&lt;br/&gt;</summary><category term="Brython"></category></entry><entry><title>week 16</title><link href="./week-16.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-26:./week-16.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;w17 1/2放假&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/199423621"&gt;影片&lt;/a&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>week 16</title><link href="./week-16.html" rel="alternate"></link><published>2016-12-26T12:00:00+08:00</published><updated>2016-12-26T12:00:00+08:00</updated><author><name>40523236</name></author><id>tag:,2016-12-26:./week-16.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
